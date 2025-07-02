@@ -1,0 +1,36 @@
+@let isSmall = isHandset();
+
+<mat-sidenav-container>
+  <mat-sidenav
+    #drawer
+    fixedInViewport
+    [attr.role]="isSmall ? 'dialog' : 'navigation'"
+    [mode]="isSmall ? 'over' : 'side'"
+    [opened]="!isSmall"
+  >
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      @if (isSmall) {
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          matIconButton
+          (click)="drawer.toggle()"
+        >
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      }
+      <h1>Dashboard</h1>
+    </mat-toolbar>
+    <main>
+      <router-outlet />
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

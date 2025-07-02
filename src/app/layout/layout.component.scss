@@ -1,0 +1,37 @@
+:host {
+  --mat-toolbar-container-background-color: #fff;
+  --mat-sidenav-container-background-color: #fff;
+  --mat-sidenav-content-background-color: var(--mat-sys-surface);
+}
+
+mat-sidenav-container {
+  min-height: 100vh;
+}
+
+mat-sidenav {
+  width: 200px;
+}
+
+mat-sidenav {
+  --mat-sidenav-container-shape: 0;
+
+  border-inline-end: 1px solid var(--mat-sys-outline);
+
+  @media (max-width: 599.98px) and (orientation: portrait), (max-width: 959.98px) and (orientation: landscape) {
+    & {
+      --mat-sidenav-container-shape: unset;
+      border-inline-end: 0;
+    }
+  }
+}
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-bottom: 1px solid var(--mat-sys-outline);
+}
+
+main {
+  padding: 1rem;
+}
