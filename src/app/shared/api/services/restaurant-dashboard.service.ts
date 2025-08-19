@@ -10,7 +10,8 @@ import {
   CloseRestaurantRequest,
   CloseRestaurantResponse,
   RejectReservationRequest,
-  RejectReservationResponse
+  RejectReservationResponse,
+  Restaurant
 } from '../types';
 
 @Injectable({
@@ -20,6 +21,10 @@ export class RestaurantDashboardService {
 
   private http = inject(HttpClient);
   private apiPrefix = '/api/restaurants-dashboard';
+
+  getRestaurantsList() {
+    return this.http.get<Restaurant[]>('/api/restaurants')
+  }
 
   createRestaurant(data: CreateRestaurantRequest) {
     const formData = new FormData();

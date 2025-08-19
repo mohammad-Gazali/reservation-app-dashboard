@@ -12,7 +12,8 @@ import {
   CreateTourStopRequest,
   CreateTourStopResponse,
   DeleteTourStopRequest,
-  DeleteTourStopResponse
+  DeleteTourStopResponse,
+  Tour
 } from '../types';
 
 @Injectable({
@@ -21,6 +22,10 @@ import {
 export class TourDashboardService {
   private http = inject(HttpClient);
   private apiPrefix = '/api/tours-dashboard';
+
+  getToursList() {
+    return this.http.get<Tour[]>('/api/tours');
+  }
 
   createTour(data: CreateTourRequest) {
     const formData = new FormData();

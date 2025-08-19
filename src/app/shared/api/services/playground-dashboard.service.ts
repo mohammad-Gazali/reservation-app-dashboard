@@ -10,7 +10,8 @@ import {
   ClosePlayGroundRequest,
   ClosePlayGroundResponse,
   RejectReservationRequest,
-  RejectReservationResponse
+  RejectReservationResponse,
+  PlayGround
 } from '../types';
 
 @Injectable({
@@ -20,6 +21,10 @@ export class PlaygroundDashboardService {
 
   private http = inject(HttpClient);
   private apiPrefix = '/api/playgrounds-dashboard';
+
+  getPlaygroundsList() {
+    return this.http.get<PlayGround[]>('/api/playgrounds')
+  }
 
   createPlayground(data: CreatePlayGroundRequest) {
     const formData = new FormData();

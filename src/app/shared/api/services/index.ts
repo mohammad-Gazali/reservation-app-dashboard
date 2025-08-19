@@ -4,3 +4,4 @@ export * from './restaurant-dashboard.service';
 export * from './playground-dashboard.service';
 export * from './event-hall-dashboard.service';
 export * from './hotel-dashboard.service';
+export * from './tour-dashboard.service';

@@ -8,11 +8,19 @@
     [mode]="isSmall ? 'over' : 'side'"
     [opened]="!isSmall"
   >
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar>
+      <img src="/logo.png" alt="Logo" />
+      Reserve App
+    </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      @for (route of sidenavRoutes; track route.title) {
+        <a mat-list-item [routerLink]="route.path">
+          <mat-icon matListItemIcon>
+            {{ route.icon }}
+          </mat-icon>
+          {{ route.title }}
+        </a>
+      }
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -28,7 +36,10 @@
         </button>
       }
       <h1>Dashboard</h1>
+      <div style="flex-grow: 1;"></div>
+      <app-layout-settings />
     </mat-toolbar>
+    <app-layout-breadcrumbs />
     <main>
       <router-outlet />
     </main>

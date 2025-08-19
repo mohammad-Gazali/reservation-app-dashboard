@@ -1,0 +1,11 @@
+<div class="header">
+  <h1>Admins Management</h1>
+  <button mat-flat-button color="primary" (click)="openFormDialog()">Create Admin</button>
+</div>
+
+<app-data-table
+  [data]="data()"
+  [columns]="columns"
+  (editClicked)="openFormDialog($event)"
+  (deleteClicked)="onDeleteAdmin($event)"
+></app-data-table>

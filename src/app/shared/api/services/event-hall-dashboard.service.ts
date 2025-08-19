@@ -10,16 +10,20 @@ import {
   CloseEventHallRequest,
   CloseEventHallResponse,
   RejectReservationRequest,
-  RejectReservationResponse
+  RejectReservationResponse,
+  EventHall
 } from '../types';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EventHallDashboardService {
-
   private http = inject(HttpClient);
   private apiPrefix = '/api/eventhalls-dashboard';
+
+  getEventHallsList() {
+    return this.http.get<EventHall[]>('/api/event-halls');
+  }
 
   createEventHall(data: CreateEventHallRequest) {
     const formData = new FormData();

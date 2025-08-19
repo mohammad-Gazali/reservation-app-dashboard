@@ -1,0 +1,11 @@
+<div class="header">
+  <h1>Hotels Management</h1>
+  <button mat-flat-button color="primary" (click)="openFormDialog()">Create Hotel</button>
+</div>
+
+<app-data-table
+  [data]="data()"
+  [columns]="columns"
+  (editClicked)="openFormDialog($event)"
+  (deleteClicked)="onDeleteHotel($event)"
+></app-data-table>

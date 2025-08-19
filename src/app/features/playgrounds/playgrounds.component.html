@@ -1,0 +1,11 @@
+<div class="header">
+  <h1>Playgrounds Management</h1>
+  <button mat-flat-button color="primary" (click)="openFormDialog()">Create Playground</button>
+</div>
+
+<app-data-table
+  [data]="data()"
+  [columns]="columns"
+  (editClicked)="openFormDialog($event)"
+  (deleteClicked)="onDeletePlayground($event)"
+></app-data-table>

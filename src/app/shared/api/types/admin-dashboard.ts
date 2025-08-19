@@ -17,6 +17,26 @@ export interface UnblockUserResponse {
   message: string;
 }
 
+export interface CreateAdminRequest {
+  name: string;
+  email: string;
+  password?: string;
+  role: 'super-admin' | 'admin' | 'manager';
+}
+
+export interface CreateAdminResponse {
+  message: string;
+  user: User;
+}
+
+export interface DeleteAdminRequest {
+  admin_id: number;
+}
+
+export interface DeleteAdminResponse {
+  message: string;
+}
+
 // --- COUPONS ---
 export interface GetCouponsResponse {
   status: string;
@@ -47,7 +67,7 @@ export interface GetUserReservationsResponse {
   data: ReservationData;
 }
 
-interface ReservationData {
+export interface ReservationData {
   restaurant_reservations?: any[];
   hotel_reservations?: any[];
   tour_reservations?: any[];

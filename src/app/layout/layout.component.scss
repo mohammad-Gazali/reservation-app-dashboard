@@ -4,6 +4,10 @@
   --mat-sidenav-content-background-color: var(--mat-sys-surface);
 }
 
+h1 {
+  font-weight: bold !important;
+}
+
 mat-sidenav-container {
   min-height: 100vh;
 }
@@ -30,8 +34,26 @@ mat-toolbar {
   top: 0;
   z-index: 1;
   border-bottom: 1px solid var(--mat-sys-outline);
+
+  mat-sidenav-content & {
+    --mat-toolbar-container-background-color: var(--mat-sys-primary-container);
+    --mat-toolbar-container-text-color: var(--mat-sys-on-primary-container);
+  }
+
+  mat-sidenav & {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+
+    img {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
 }
 
 main {
-  padding: 1rem;
+  padding: 0 1rem 1rem;
+  overflow-y: hidden;
 }

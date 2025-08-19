@@ -1,0 +1,14 @@
+<h1>Admin Dashboard</h1>
+<div class="cards-container">
+  @for (item of dashboardItems; track item.title) {
+    <mat-card [routerLink]="item.path">
+      <mat-card-header>
+        <mat-icon mat-card-avatar>{{ item.icon }}</mat-icon>
+        <mat-card-title>{{ item.title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Manage {{ item.title.toLowerCase() }}</p>
+      </mat-card-content>
+    </mat-card>
+  }
+</div>

@@ -3,6 +3,10 @@ import { Injectable, inject } from '@angular/core';
 import {
   CreateCouponRequest,
   CreateCouponResponse,
+  CreateAdminRequest,
+  CreateAdminResponse,
+  DeleteAdminRequest,
+  DeleteAdminResponse,
   GetBlockedUsersResponse,
   GetCouponsResponse,
   GetUserReservationsRequest,
@@ -30,6 +34,14 @@ export class AdminDashboardService {
 
   unblockUser(data: UnblockUserRequest) {
     return this.http.post<UnblockUserResponse>(`${this.apiPrefix}/unblock`, data);
+  }
+
+  createAdmin(data: CreateAdminRequest) {
+    return this.http.post<CreateAdminResponse>(`${this.apiPrefix}/create-admin`, data);
+  }
+
+  deleteAdmin(data: DeleteAdminRequest) {
+    return this.http.post<DeleteAdminResponse>(`${this.apiPrefix}/delete-admin`, data);
   }
 
   getCoupons() {

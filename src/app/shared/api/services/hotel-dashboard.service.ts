@@ -14,7 +14,8 @@ import {
   CreateHotelRoomRequest,
   CreateHotelRoomResponse,
   DeleteHotelRoomRequest,
-  DeleteHotelRoomResponse
+  DeleteHotelRoomResponse,
+  Hotel
 } from '../types';
 
 @Injectable({
@@ -24,6 +25,10 @@ export class HotelDashboardService {
 
   private http = inject(HttpClient);
   private apiPrefix = '/api/hotels-dashboard';
+
+  getHotelsList() {
+    return this.http.get<Hotel[]>('/api/hotels')
+  }
 
   createHotel(data: CreateHotelRequest) {
     const formData = new FormData();

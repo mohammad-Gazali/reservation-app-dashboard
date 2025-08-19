@@ -1,0 +1,11 @@
+<div class="header">
+  <h1>Event Halls Management</h1>
+  <button mat-flat-button color="primary" (click)="openFormDialog()">Create Event Hall</button>
+</div>
+
+<app-data-table
+  [data]="data()"
+  [columns]="columns"
+  (editClicked)="openFormDialog($event)"
+  (deleteClicked)="onDeleteEventHall($event)"
+></app-data-table>

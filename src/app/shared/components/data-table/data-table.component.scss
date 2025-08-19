@@ -1,0 +1,24 @@
+@use "@angular/material" as mat;
+
+:host {
+  --mat-table-background-color: #fff;
+  --mat-paginator-container-background-color: #fff;
+
+  display: block;
+  box-shadow: var(--mat-sys-level2);
+  border-radius: var(--mat-sys-corner-medium);
+  overflow: hidden;
+}
+
+[mat-mini-fab] {
+  box-shadow: var(--mat-sys-level2);
+  
+  & + & {
+    margin: 0 1rem;
+  }
+
+  &.mat-warn {
+    --mat-fab-small-container-color: #fddbe5;
+    --mat-fab-small-foreground-color: #a20350;
+  }
+}
