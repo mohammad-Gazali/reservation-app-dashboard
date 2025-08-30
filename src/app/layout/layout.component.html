@@ -10,7 +10,7 @@
   >
     <mat-toolbar>
       <img src="/logo.png" alt="Logo" />
-      Gazali App
+      Resser GO
     </mat-toolbar>
     <mat-nav-list>
       @for (route of sidenavRoutes; track route.title) {
@@ -21,6 +21,12 @@
           {{ route.title }}
         </a>
       }
+      <a (click)="logout()" mat-list-item>
+        <mat-icon matListItemIcon>
+          logout
+        </mat-icon>
+        Logout
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -37,6 +43,9 @@
       }
       <h1>Dashboard</h1>
       <div style="flex-grow: 1;"></div>
+      <button (click)="logout()" mat-button>
+        Logout
+      </button>
       <app-layout-settings />
     </mat-toolbar>
     <app-layout-breadcrumbs />

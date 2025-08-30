@@ -59,7 +59,7 @@ export class AdminAuthService {
 
   getAdmin() {
     return this.http.get<GetAdminResponse>(
-      `${this.apiPrefix}/me`
+      `${this.apiPrefix}/profile`
     ).pipe(
       catchError(this.handleError)
     );

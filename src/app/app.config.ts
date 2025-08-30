@@ -13,7 +13,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(
       withInterceptors(interceptors),
     ),
-    provideMockApiData(),
+    // provideMockApiData(),
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: {

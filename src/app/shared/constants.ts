@@ -1,1 +1,1 @@
-export const AUTH_TOKEN = 'reservation-app-token';
+export const AUTH_TOKEN_KEY = "reservation-dashboard-auth-token";;
